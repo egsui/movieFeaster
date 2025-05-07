@@ -1,0 +1,218 @@
+/* MovieListPage.css */
+.movie-list-page {
+    padding: 2rem 0;
+}
+
+.list-header {
+    margin-bottom: 2rem;
+}
+
+.list-header h1 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.filter-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.filter-summary p {
+    margin: 0;
+    font-weight: 500;
+    color: #555;
+    margin-right: 0.5rem;
+}
+
+.filter-tag {
+    background-color: #f0f0f0;
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.filter-content {
+    margin-right: 0.5rem;
+}
+
+.filter-remove {
+    cursor: pointer;
+    font-size: 16px;
+    color: #888;
+}
+
+.filter-remove:hover {
+    color: #ff4747;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid #f5c6cb;
+}
+
+.loading-container {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #dc3545;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.results-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.controls-container {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.sort-control,
+.download-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sort-control label,
+.download-control label {
+    color: #555;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.sort-select,
+.download-select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    color: #333;
+    font-size: 0.9rem;
+    min-width: 180px;
+}
+
+.download-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 0.9rem;
+}
+
+.download-button:hover {
+    background-color: #0069d9;
+}
+
+.download-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.results-count {
+    margin-bottom: 0;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.results-count p {
+    margin: 0;
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.no-results h2 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.no-results p {
+    color: #666;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .results-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .controls-container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .sort-control,
+    .download-control {
+        width: 100%;
+    }
+
+    .sort-select,
+    .download-select {
+        flex-grow: 1;
+    }
+    .already-rated-message {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .already-rated-message p {
+        color: #28a745;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+    }
+
+    .rating-star.disabled {
+        color: #ffc107;
+        cursor: default;
+        opacity: 0.7;
+    }
+
+    /* Optional: Add a subtle indicator that the rating section is disabled */
+    .rating-section:has(.already-rated-message) {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        opacity: 0.9;
+    }
+}
